@@ -16,7 +16,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%    PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
 \documentclass[11pt]{scrartcl} % 11pt font size
@@ -35,10 +35,10 @@
 
 \usepackage[ % This block contains information used to annotate the PDF
 colorlinks=false, 
-pdftitle={Cheatsheet}, 
-pdfauthor={John Smith}, 
+pdftitle={tmux Cheatsheet}, 
+pdfauthor={Oliver Stueker}, 
 pdfsubject={Compilation of useful shortcuts}, 
-pdfkeywords={Random Software, Cheatsheet}
+pdfkeywords={tmux, Cheatsheet}
 ]{hyperref}
 
 % \usepackage{listings}
@@ -61,7 +61,7 @@ pdfkeywords={Random Software, Cheatsheet}
 \begin{picture}(297,210) % Create a container for the page content
 
 %----------------------------------------------------------------------------------------
-%	TITLE SECTION 
+%    TITLE SECTION 
 %----------------------------------------------------------------------------------------
 
 \put(10,200){ % Position on the page to put the title
@@ -71,18 +71,18 @@ pdfkeywords={Random Software, Cheatsheet}
 }
 
 %----------------------------------------------------------------------------------------
-%	FIRST COLUMN SPECIFICATION
+%    FIRST COLUMN SPECIFICATION
 %----------------------------------------------------------------------------------------
 
 \put(10,180){ % Divide the page
 \begin{minipage}[t]{85mm} % Create a box to house text
 
 %----------------------------------------------------------------------------------------
-%	HEADING ONE: Sessions
+%    HEADING ONE: Sessions
 %----------------------------------------------------------------------------------------
 
 \sectiontitle{Sessions}
-			
+    
 Client = Application window.\\
 
 \command{\$ tmux}       {Start new session}
@@ -92,35 +92,35 @@ Client = Application window.\\
 \command{\$ tmux a}     {Attach to last session}
 \command{\$ tmux at}    {Attach to last session}
 \command{\$ tmux attach}{Attach to last session}
-\command{Ctrl + b  d}	{Detach session}
+\command{Ctrl + b  d}    {Detach session}
 
 %----------------------------------------------------------------------------------------
-%	HEADING TWO: Panes
-%----------------------------------------------------------------------------------------				
-			
+%    HEADING TWO: Panes
+%----------------------------------------------------------------------------------------                
+    
 \sectiontitle{Panes}
-			
-\command{Ctrl + b  \%}			{Split pane vertically}
-\command{Ctrl + b  "} 			{Split pane horizontally}
-\command{Ctrl + b  z}			{zoom pane to full screen}
-\command{Ctrl + b  <arrows>}		{move pane focus}
-\command{Ctrl + b  <num>}		{focus pane <num>}
-\command{Ctrl + b  q} 			{show pane numbers}
-\command{Ctrl + b  \{ / \} }		{move current pane left / right}
-\command{Ctrl + b  Alt + 1...5}		{pane layout}
-\command{Ctrl + b  x}			{kill pane}
+    
+\command{Ctrl + b  \%}            {Split pane vertically}
+\command{Ctrl + b  "}             {Split pane horizontally}
+\command{Ctrl + b  z}            {zoom pane to full screen}
+\command{Ctrl + b  <arrows>}        {move pane focus}
+\command{Ctrl + b  <num>}        {focus pane <num>}
+\command{Ctrl + b  q}             {show pane numbers}
+\command{Ctrl + b  \{ / \} }        {move current pane left / right}
+\command{Ctrl + b  Alt + 1...5}        {pane layout}
+\command{Ctrl + b  x}            {kill pane}
 
 %----------------------------------------------------------------------------------------
-%	HEADING THREE: Windows
-%----------------------------------------------------------------------------------------	
+%    HEADING THREE: Windows
+%----------------------------------------------------------------------------------------    
 
 \sectiontitle{Windows}
-\command{Ctrl + b  c}	{Create new Window}
-\command{Ctrl + b  n}	{move to next window}
-\command{Ctrl + b  p}	{move to previous window}
-\command{Ctrl + b  l}	{move to prev-selected window}
-\command{Ctrl + b  ,}	{rename window}
-\command{Ctrl + b  \&}	{kill window}
+\command{Ctrl + b  c}    {Create new Window}
+\command{Ctrl + b  n}    {move to next window}
+\command{Ctrl + b  p}    {move to previous window}
+\command{Ctrl + b  l}    {move to prev-selected window}
+\command{Ctrl + b  ,}    {rename window}
+\command{Ctrl + b  \&}    {kill window}
 
 %----------------------------------------------------------------------------------------
 
@@ -128,14 +128,14 @@ Client = Application window.\\
 } % End the first division of the page
 
 %----------------------------------------------------------------------------------------
-%	SECOND COLUMN SPECIFICATION 
+%    SECOND COLUMN SPECIFICATION 
 %----------------------------------------------------------------------------------------
 
 \put(105,180){ % Divide the page
 \begin{minipage}[t]{85mm} % Create a box to house text
 
 %----------------------------------------------------------------------------------------
-%	HEADING FOUR
+%    HEADING FOUR
 %----------------------------------------------------------------------------------------
 
 \sectiontitle{Copy mode}
@@ -158,11 +158,11 @@ Client = Application window.\\
 \command{Esc}                    {Clear selection}
 
 
-					
+    
 %----------------------------------------------------------------------------------------
-%	HEADING FIVE
-%----------------------------------------------------------------------------------------				
-					
+%    HEADING FIVE
+%----------------------------------------------------------------------------------------                
+    
 \sectiontitle{Miscellaneous} % Heading five
 
 \command{Ctrl + b  t}            {Show time}
@@ -173,31 +173,31 @@ Client = Application window.\\
 } % End the second division of the page
 
 %----------------------------------------------------------------------------------------
-%	THIRD COLUMN SPECIFICATION 
+%    THIRD COLUMN SPECIFICATION 
 %----------------------------------------------------------------------------------------
 
 \put(200,180){ % Divide the page
 \begin{minipage}[t]{85mm} % Create a box to house tex
 
 %----------------------------------------------------------------------------------------
-%	IMPORTANT FILES
+%    IMPORTANT FILES
 %----------------------------------------------------------------------------------------
 
 \sectiontitle{.tmux.conf}
 
 \begin{alltt}
-\# conflicts with Emacs Pos1 command:		\\
-\# set-option -g prefix C-a					\\
-											\\
-\# bind window splitting to | - :			\\
- unbind \%									\\
- bind | split-window -h						\\
- bind - split-window -v						\\
-											\\
-\# Vi copypaste mode 						\\
- set-window-option -g mode-keys vi			\\
- bind-key -t vi-copy 'v' begin-selection	\\
- bind-key -t vi-copy 'y' copy-selection		\\
+\# conflicts with Emacs Pos1 command:       \\
+\# set-option -g prefix C-a                 \\
+                                            \\
+\# bind window splitting to | - :           \\
+ unbind \%                                  \\
+ bind | split-window -h                     \\
+ bind - split-window -v                     \\
+                                            \\
+\# Vi copypaste mode                        \\
+ set-window-option -g mode-keys vi          \\
+ bind-key -t vi-copy 'v' begin-selection    \\
+ bind-key -t vi-copy 'y' copy-selection     \\
 \end{alltt}
 
 
@@ -205,7 +205,7 @@ Client = Application window.\\
 \vspace{\baselineskip} % Whitespace before the next section
 
 %----------------------------------------------------------------------------------------
-%	LINKS AND INFORMATION
+%    LINKS AND INFORMATION
 %----------------------------------------------------------------------------------------
 
 \sectiontitle{Links and information}
@@ -214,7 +214,7 @@ Client = Application window.\\
 \url{https://leanpub.com/the-tao-of-tmux/read}
 
 %----------------------------------------------------------------------------------------
-%	FOOTNOTE
+%    FOOTNOTE
 %----------------------------------------------------------------------------------------
 
 \vspace{\baselineskip}
