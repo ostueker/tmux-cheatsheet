@@ -159,6 +159,20 @@ Client = Application window.\\
 
 
     
+
+%----------------------------------------------------------------------------------------
+
+\end{minipage} % End the second column of text
+} % End the second division of the page
+
+
+%----------------------------------------------------------------------------------------
+%    THIRD COLUMN SPECIFICATION 
+%----------------------------------------------------------------------------------------
+
+\put(195,180){ % Divide the page
+\begin{minipage}[t]{85mm} % Create a box to house tex
+
 %----------------------------------------------------------------------------------------
 %    HEADING FIVE
 %----------------------------------------------------------------------------------------                
@@ -167,42 +181,6 @@ Client = Application window.\\
 
 \command{Ctrl + b  t}            {Show time}
 
-%----------------------------------------------------------------------------------------
-
-\end{minipage} % End the second column of text
-} % End the second division of the page
-
-%----------------------------------------------------------------------------------------
-%    THIRD COLUMN SPECIFICATION 
-%----------------------------------------------------------------------------------------
-
-\put(200,180){ % Divide the page
-\begin{minipage}[t]{85mm} % Create a box to house tex
-
-%----------------------------------------------------------------------------------------
-%    IMPORTANT FILES
-%----------------------------------------------------------------------------------------
-
-\sectiontitle{.tmux.conf}
-
-\begin{alltt}
-\# conflicts with Emacs Pos1 command:       \\
-\# set-option -g prefix C-a                 \\
-                                            \\
-\# bind window splitting to | - :           \\
- unbind \%                                  \\
- bind | split-window -h                     \\
- bind - split-window -v                     \\
-                                            \\
-\# Vi copypaste mode                        \\
- set-window-option -g mode-keys vi          \\
- bind-key -t vi-copy 'v' begin-selection    \\
- bind-key -t vi-copy 'y' copy-selection     \\
-\end{alltt}
-
-
-
-\vspace{\baselineskip} % Whitespace before the next section
 
 %----------------------------------------------------------------------------------------
 %    LINKS AND INFORMATION
@@ -222,17 +200,37 @@ Client = Application window.\\
 {\color{mygray}\line(1,0){30}} % Print the line with a custom color
 
 \footnotesize{
-Created by Oliver Stueker, 2017\\ 
-
+Created by Oliver Stueker, 2017-2022\\ 
 Released under the MIT license.
 }
 
 %----------------------------------------------------------------------------------------
-
 \end{minipage} % End the third column of text
 } % End the third division of the page
-\end{picture} % End the container for the entire page
 
+%----------------------------------------------------------------------------------------
+% WIDE BOX AT THE BOTTOM OF COLUMNS 2 & 3
+%----------------------------------------------------------------------------------------
+
+\put(105,60){ % Divide the page
+\begin{minipage}[t]{185mm} % Create a box to house text
+\rule{\linewidth}{0.1mm}
+%----------------------------------------------------------------------------------------
+%    IMPORTANT FILES
+%----------------------------------------------------------------------------------------
+\sectiontitle{.tmux.conf}
+\begin{alltt}
+\# For Ctrl + arrow keys to work in PuTTY https://superuser.com/a/1165558        \\
+set -g terminal-overrides "xterm*:kLFT5=\textbackslash eOD:kRIT5=\textbackslash eOC:kUP5=\textbackslash eOA:kDN5=\textbackslash eOB:smkx@:rmkx@"
+\end{alltt}
+
+%----------------------------------------------------------------------------------------
+
+\end{minipage} % End the WIDE BOX AT THE BOTTOM OF COLUMNS 2 & 3
+} % End the second division of the page
+
+%----------------------------------------------------------------------------------------
+\end{picture} % End the container for the entire page
 %----------------------------------------------------------------------------------------
 
 \end{document}

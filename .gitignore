@@ -4,6 +4,8 @@
 *.fls
 *.log
 *.out
+*.ps
 *.pdf
 *.pyg
 *.sublime-*
+
